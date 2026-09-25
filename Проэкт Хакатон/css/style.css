@@ -4,42 +4,39 @@
 }
 
 :root {
-    /* Цветовая гармония по 12-частному кругу Иоганнеса Иттена (Split-Complementary Harmony) */
+    /* Эстетика величественного хвойного леса (Deep Enchanted Forest & Komorebi) */
+    --forest-deep: #06110a;
+    --forest-canopy: #0d281a;
+    --forest-sunbeam: #19462f;
     
-    /* 1. Сектор Жёлто-Оранжевый (Hue 44°) — Разбелённый тёплый лен и светлое масло */
-    --itten-cream-light: #fdfbf7;
-    --itten-cream-bg: #f9f6ee;
-    --itten-cream-card: rgba(255, 255, 255, 0.92);
+    /* Моховое стекло */
+    --moss-glass: rgba(11, 28, 19, 0.82);
+    --moss-border: rgba(74, 222, 128, 0.22);
+    --moss-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.65), 0 0 30px rgba(34, 197, 94, 0.08);
     
-    /* 2. Сектор Зелёный (Hue 148°) — Природная растительная хвоя и чистая листва */
-    --itten-green-primary: #1c5338;
-    --itten-green-leaf: #2e7d4f;
-    --itten-green-surface: rgba(28, 83, 56, 0.08);
-    --itten-green-border: rgba(28, 83, 56, 0.22);
-    --itten-green-glow: rgba(28, 83, 56, 0.32);
+    /* Сочная листва, хвоя и лесная роса */
+    --leaf-emerald: #15803d;
+    --leaf-forest: #22c55e;
+    --leaf-glow: #4ade80;
+    --leaf-dew: #e8fdf0;
     
-    /* 3. Сектор Красно-Оранжевый (Hue 24°) — Глубокий шоколадно-земляной тон */
-    --itten-earth-chocolate: #341c14;
-    --itten-earth-border: rgba(52, 28, 20, 0.12);
-    --itten-earth-shadow: rgba(52, 28, 20, 0.06);
-    
-    /* Текстовые контрасты по законам Иттена (Контраст светлого и темного) */
-    --text-primary: #1e2e25;
-    --text-light: #fdfbf7;
+    /* Тексты */
+    --text-forest: #e2faec;
+    --text-pure: #ffffff;
 }
 
 html {
-    background-color: var(--itten-cream-bg);
-    background: radial-gradient(circle at 50% -10%, var(--itten-cream-light) 0%, var(--itten-cream-bg) 50%, #f0ebd9 100%);
+    background-color: var(--forest-deep);
+    background: radial-gradient(ellipse at 50% -15%, var(--forest-sunbeam) 0%, var(--forest-canopy) 45%, var(--forest-deep) 100%);
     min-height: 100vh;
-    color: var(--text-primary);
+    color: var(--text-forest);
 }
 
 body {
     margin: 0;
     min-height: 100vh;
     background: transparent;
-    color: var(--text-primary);
+    color: var(--text-forest);
 }
 
 header {
@@ -49,36 +46,36 @@ header {
 }
 
 .nav-bar {
-    background-color: var(--itten-cream-card);
+    background-color: var(--moss-glass);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     max-width: 1800px;
     width: 100%;
     min-height: 110px;
-    border: 1px solid var(--itten-earth-border);
-    border-top: 3px solid var(--itten-green-primary);
-    border-radius: 24px;
+    border: 1px solid var(--moss-border);
+    border-radius: 26px;
     display: flex;
     align-items: center;
     padding: 0 50px;
     gap: 70px;
-    box-shadow: 0 12px 36px -6px var(--itten-earth-shadow), 0 2px 8px rgba(28, 83, 56, 0.04);
+    box-shadow: var(--moss-shadow);
 }
 
 .logo-img {
     background: #ffffff;
-    border: 1px solid var(--itten-earth-border);
-    border-radius: 18px;
-    padding: 10px 20px;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    border-radius: 20px;
+    padding: 10px 22px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 16px var(--itten-earth-shadow);
-    transition: transform 0.25s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), 0 0 20px rgba(34, 197, 94, 0.15);
+    transition: all 0.3s ease;
 }
 
 .logo-img:hover {
     transform: scale(1.02);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4), 0 0 25px rgba(74, 222, 128, 0.3);
 }
 
 .logo-log {
@@ -102,31 +99,31 @@ header {
 
 .desc-nav-bar {
     text-decoration: none;
-    color: var(--itten-green-primary);
-    background: var(--itten-green-surface);
-    padding: 12px 24px;
-    border: 1px solid var(--itten-green-border);
+    color: var(--text-forest);
+    background: rgba(22, 56, 38, 0.55);
+    padding: 12px 26px;
+    border: 1px solid var(--moss-border);
     border-radius: 9999px;
     font-weight: 600;
     font-size: 15px;
     letter-spacing: 0.3px;
-    box-shadow: 0 2px 6px rgba(28, 83, 56, 0.04);
-    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-flex;
     align-items: center;
 }
 
 .desc-nav-bar:hover {
-    color: var(--text-light);
-    background: linear-gradient(135deg, var(--itten-green-primary) 0%, var(--itten-green-leaf) 100%);
-    border-color: var(--itten-green-primary);
-    box-shadow: 0 8px 22px -4px var(--itten-green-glow);
+    color: var(--text-pure);
+    background: linear-gradient(135deg, #166534 0%, #15803d 50%, var(--leaf-forest) 100%);
+    border-color: var(--leaf-glow);
+    box-shadow: 0 0 28px rgba(74, 222, 128, 0.42), 0 8px 24px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     transform: translateY(-2px);
 }
 
 .desc-nav-bar:active {
-    background: var(--itten-earth-chocolate);
-    border-color: var(--itten-earth-chocolate);
     transform: translateY(0);
+    background: #14532d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }

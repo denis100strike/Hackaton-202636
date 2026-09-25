@@ -11,11 +11,20 @@ export default {
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
-        itten: {
-          cream: '#F9F6EE',
-          green: '#1C5338',
-          leaf: '#2E7D4F',
-          earth: '#341C14',
+        forest: {
+          deep: '#06110A',
+          canopy: '#0D281A',
+          sunbeam: '#19462F',
+        },
+        moss: {
+          glass: 'rgba(11, 28, 19, 0.82)',
+          border: 'rgba(74, 222, 128, 0.22)',
+        },
+        leaf: {
+          emerald: '#15803D',
+          forest: '#22C55E',
+          glow: '#4ADE80',
+          dew: '#E8FDF0',
         },
         profi: {
           green: '#009640',
