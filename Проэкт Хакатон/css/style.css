@@ -4,90 +4,81 @@
 }
 
 :root {
-    /* Гармония тёмного и светлого без крайностей (Forest Canopy & Sunlit Mist) */
+    /* Палитра: Светло-жёлтый холст + Тёмно-зелёный лесной блок + Тёплый шоколад */
     
-    /* Тёмный лесной полог (не чёрный, а глубокий хвойный) */
-    --canopy-dark: #10261b;
-    --canopy-deep: #163626;
-    --canopy-mid: #1d4632;
+    /* 1. Светло-жёлтый фон (Butter & Warm Cream Linen) */
+    --bg-butter-light: #fffdf5;
+    --bg-butter: #faf4e2;
+    --bg-butter-dark: #f0e7d0;
     
-    /* Светлый утренний туман (не ослепительно белый, а мягкий природный) */
-    --mist-light: #f2f7f4;
-    --mist-soft: #e2ece5;
+    /* 2. Тёмно-зелёный (Deep Pine Forest) */
+    --nav-green-deep: #123524;
+    --nav-green-surface: rgba(18, 53, 36, 0.94);
+    --nav-green-border: rgba(46, 117, 82, 0.35);
+    --nav-green-shadow: 0 18px 45px -8px rgba(18, 53, 36, 0.28), 0 4px 14px rgba(18, 53, 36, 0.15);
     
-    /* Светлое матовое стекло навигации */
-    --nav-surface: rgba(255, 255, 255, 0.92);
-    --nav-border: rgba(255, 255, 255, 0.65);
-    --nav-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.35), 0 4px 15px rgba(16, 38, 27, 0.15);
-    
-    /* Тёмно-хвойные интерактивные кнопки */
-    --btn-pine: #143d28;
-    --btn-pine-hover: #1b5e3b;
-    --btn-leaf: #2e8b57;
-    --btn-border: #0f301f;
-    --btn-shadow: 0 4px 12px rgba(16, 38, 27, 0.25);
+    /* 3. Тёплый шоколад (Rich Artisan Chocolate & Earth) */
+    --chocolate-deep: #2e1a12;
+    --chocolate-border: #4a2b1f;
+    --chocolate-shadow: 0 8px 22px -4px rgba(46, 26, 18, 0.45);
     
     /* Тексты */
-    --text-on-light: #14281e;
-    --text-on-dark: #ffffff;
+    --text-dark: #123524;
+    --text-butter: #faf4e2;
+    --text-pure: #ffffff;
 }
 
 html {
-    background-color: var(--canopy-dark);
-    background: linear-gradient(180deg, 
-        var(--canopy-dark) 0%, 
-        var(--canopy-deep) 180px, 
-        var(--canopy-mid) 280px, 
-        var(--mist-soft) 460px, 
-        var(--mist-light) 700px
-    );
+    background-color: var(--bg-butter);
+    background: radial-gradient(ellipse at 50% 0%, var(--bg-butter-light) 0%, var(--bg-butter) 55%, var(--bg-butter-dark) 100%);
     min-height: 100vh;
-    color: var(--text-on-light);
+    color: var(--text-dark);
 }
 
 body {
     margin: 0;
     min-height: 100vh;
     background: transparent;
-    color: var(--text-on-light);
+    color: var(--text-dark);
 }
 
 header {
     display: flex;
     justify-content: center;
-    padding: 32px 24px 24px 24px;
+    padding: 32px 24px;
 }
 
 .nav-bar {
-    background-color: var(--nav-surface);
+    background-color: var(--nav-green-surface);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     max-width: 1800px;
     width: 100%;
     min-height: 110px;
-    border: 1px solid var(--nav-border);
+    border: 1px solid var(--nav-green-border);
     border-radius: 26px;
     display: flex;
     align-items: center;
     padding: 0 50px;
     gap: 70px;
-    box-shadow: var(--nav-shadow);
+    box-shadow: var(--nav-green-shadow);
 }
 
 .logo-img {
-    background: transparent;
-    border: none;
-    border-radius: 12px;
-    padding: 4px 8px;
+    background: var(--bg-butter);
+    border: 1px solid rgba(46, 26, 18, 0.12);
+    border-radius: 18px;
+    padding: 8px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: none;
-    transition: transform 0.25s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s ease;
 }
 
 .logo-img:hover {
     transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .logo-log {
@@ -111,30 +102,30 @@ header {
 
 .desc-nav-bar {
     text-decoration: none;
-    color: var(--text-on-dark);
-    background-color: var(--btn-pine);
+    color: var(--text-dark);
+    background-color: var(--bg-butter);
     padding: 12px 24px;
-    border: 1px solid var(--btn-border);
+    border: 1px solid rgba(46, 26, 18, 0.15);
     border-radius: 9999px;
     font-weight: 600;
     font-size: 15px;
     letter-spacing: 0.3px;
-    box-shadow: var(--btn-shadow);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
     transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-flex;
     align-items: center;
 }
 
 .desc-nav-bar:hover {
-    color: var(--text-on-dark);
-    background: linear-gradient(135deg, var(--btn-pine-hover) 0%, var(--btn-leaf) 100%);
-    border-color: var(--btn-pine-hover);
-    box-shadow: 0 8px 22px -4px rgba(46, 139, 87, 0.45);
+    color: var(--text-butter);
+    background-color: var(--chocolate-deep);
+    border-color: var(--chocolate-border);
+    box-shadow: var(--chocolate-shadow);
     cursor: pointer;
     transform: translateY(-2px);
 }
 
 .desc-nav-bar:active {
     transform: translateY(0);
-    background: #0f301f;
+    background-color: #1e110b;
 }
