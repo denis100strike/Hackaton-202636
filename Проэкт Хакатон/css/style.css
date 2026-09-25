@@ -4,42 +4,42 @@
 }
 
 :root {
-    /* Палитра: Светло-жёлтый холст + Тёмно-зелёный лесной блок + Тёплый шоколад */
+    /* Чистая природная палитра: Светло-жёлтый + Тёмно-зелёный лес + Изумруд (Без коричневого) */
     
-    /* 1. Светло-жёлтый фон (Butter & Warm Cream Linen) */
-    --bg-butter-light: #fffdf5;
-    --bg-butter: #faf4e2;
-    --bg-butter-dark: #f0e7d0;
+    /* 1. Светло-жёлтый фон (Butter & Vanilla Linen) */
+    --bg-butter-light: #fffdf7;
+    --bg-butter: #faf4e4;
+    --bg-butter-dark: #f0e8d2;
     
-    /* 2. Тёмно-зелёный (Deep Pine Forest) */
-    --nav-green-deep: #123524;
-    --nav-green-surface: rgba(18, 53, 36, 0.94);
-    --nav-green-border: rgba(46, 117, 82, 0.35);
-    --nav-green-shadow: 0 18px 45px -8px rgba(18, 53, 36, 0.28), 0 4px 14px rgba(18, 53, 36, 0.15);
+    /* 2. Тёмно-зелёный лесной блок (Deep Forest Pine) */
+    --forest-deep: #123524;
+    --forest-surface: rgba(18, 53, 36, 0.94);
+    --forest-border: rgba(52, 211, 153, 0.28);
+    --forest-shadow: 0 20px 45px -8px rgba(18, 53, 36, 0.25), 0 0 25px rgba(34, 197, 94, 0.08);
     
-    /* 3. Тёплый шоколад (Rich Artisan Chocolate & Earth) */
-    --chocolate-deep: #2e1a12;
-    --chocolate-border: #4a2b1f;
-    --chocolate-shadow: 0 8px 22px -4px rgba(46, 26, 18, 0.45);
+    /* 3. Сочный изумрудный акцент (Lush Leaf & Emerald Glow) */
+    --leaf-emerald: #15803d;
+    --leaf-vibrant: #22c55e;
+    --leaf-glow: #4ade80;
     
     /* Тексты */
-    --text-dark: #123524;
-    --text-butter: #faf4e2;
-    --text-pure: #ffffff;
+    --text-forest: #123524;
+    --text-butter: #faf4e4;
+    --text-white: #ffffff;
 }
 
 html {
     background-color: var(--bg-butter);
     background: radial-gradient(ellipse at 50% 0%, var(--bg-butter-light) 0%, var(--bg-butter) 55%, var(--bg-butter-dark) 100%);
     min-height: 100vh;
-    color: var(--text-dark);
+    color: var(--text-forest);
 }
 
 body {
     margin: 0;
     min-height: 100vh;
     background: transparent;
-    color: var(--text-dark);
+    color: var(--text-forest);
 }
 
 header {
@@ -49,36 +49,36 @@ header {
 }
 
 .nav-bar {
-    background-color: var(--nav-green-surface);
+    background-color: var(--forest-surface);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     max-width: 1800px;
     width: 100%;
     min-height: 110px;
-    border: 1px solid var(--nav-green-border);
+    border: 1px solid var(--forest-border);
     border-radius: 26px;
     display: flex;
     align-items: center;
     padding: 0 50px;
     gap: 70px;
-    box-shadow: var(--nav-green-shadow);
+    box-shadow: var(--forest-shadow);
 }
 
 .logo-img {
     background: var(--bg-butter);
-    border: 1px solid rgba(46, 26, 18, 0.12);
+    border: 1px solid var(--forest-border);
     border-radius: 18px;
     padding: 8px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 0 12px rgba(34, 197, 94, 0.08);
     transition: all 0.25s ease;
 }
 
 .logo-img:hover {
     transform: scale(1.02);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 0 16px rgba(74, 222, 128, 0.2);
 }
 
 .logo-log {
@@ -102,30 +102,30 @@ header {
 
 .desc-nav-bar {
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--text-forest);
     background-color: var(--bg-butter);
     padding: 12px 24px;
-    border: 1px solid rgba(46, 26, 18, 0.15);
+    border: 1px solid var(--forest-border);
     border-radius: 9999px;
     font-weight: 600;
     font-size: 15px;
     letter-spacing: 0.3px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
     transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-flex;
     align-items: center;
 }
 
 .desc-nav-bar:hover {
-    color: var(--text-butter);
-    background-color: var(--chocolate-deep);
-    border-color: var(--chocolate-border);
-    box-shadow: var(--chocolate-shadow);
+    color: var(--text-white);
+    background: linear-gradient(135deg, var(--leaf-emerald) 0%, var(--leaf-vibrant) 100%);
+    border-color: var(--leaf-glow);
+    box-shadow: 0 0 24px rgba(74, 222, 128, 0.45), 0 6px 18px rgba(21, 128, 61, 0.35);
     cursor: pointer;
     transform: translateY(-2px);
 }
 
 .desc-nav-bar:active {
     transform: translateY(0);
-    background-color: #1e110b;
+    background: #166534;
 }

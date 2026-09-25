@@ -20,9 +20,10 @@ export default {
           deep: '#123524',
           surface: 'rgba(18, 53, 36, 0.94)',
         },
-        chocolate: {
-          deep: '#2E1A12',
-          border: '#4A2B1F',
+        leaf: {
+          emerald: '#15803D',
+          vibrant: '#22C55E',
+          glow: '#4ADE80',
         },
         profi: {
           green: '#009640',
