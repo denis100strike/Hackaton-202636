@@ -12,19 +12,14 @@ export default {
       },
       colors: {
         forest: {
-          deep: '#06110A',
-          canopy: '#0D281A',
-          sunbeam: '#19462F',
+          light: '#F2F7F4',
+          mist: '#E2ECE5',
+          deep: '#14281E',
         },
-        moss: {
-          glass: 'rgba(11, 28, 19, 0.82)',
-          border: 'rgba(74, 222, 128, 0.22)',
-        },
-        leaf: {
-          emerald: '#15803D',
-          forest: '#22C55E',
-          glow: '#4ADE80',
-          dew: '#E8FDF0',
+        pine: {
+          deep: '#174D34',
+          medium: '#1B5E3B',
+          leaf: '#2E8B57',
         },
         profi: {
           green: '#009640',

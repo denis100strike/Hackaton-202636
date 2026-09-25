@@ -4,39 +4,40 @@
 }
 
 :root {
-    /* Эстетика величественного хвойного леса (Deep Enchanted Forest & Komorebi) */
-    --forest-deep: #06110a;
-    --forest-canopy: #0d281a;
-    --forest-sunbeam: #19462f;
+    /* Светлый эстетичный вайб леса (Sunlit Pine Forest & Morning Mist) */
+    --forest-light-bg: #f2f7f4;
+    --forest-mist: #e2ece5;
     
-    /* Моховое стекло */
-    --moss-glass: rgba(11, 28, 19, 0.82);
-    --moss-border: rgba(74, 222, 128, 0.22);
-    --moss-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.65), 0 0 30px rgba(34, 197, 94, 0.08);
+    /* Матовое лесное стекло */
+    --nav-glass: rgba(255, 255, 255, 0.85);
+    --nav-border: rgba(30, 94, 63, 0.12);
+    --nav-shadow: 0 12px 36px -6px rgba(20, 60, 40, 0.06), 0 2px 8px rgba(30, 94, 63, 0.04);
     
-    /* Сочная листва, хвоя и лесная роса */
-    --leaf-emerald: #15803d;
-    --leaf-forest: #22c55e;
-    --leaf-glow: #4ade80;
-    --leaf-dew: #e8fdf0;
+    /* Хвоя, сосны и сочная зелень */
+    --pine-deep: #174d34;
+    --pine-medium: #1b5e3b;
+    --pine-leaf: #2e8b57;
+    --pine-surface: rgba(30, 94, 63, 0.08);
+    --pine-border: rgba(30, 94, 63, 0.18);
+    --pine-glow: rgba(27, 94, 59, 0.3);
     
     /* Тексты */
-    --text-forest: #e2faec;
+    --text-pine: #14281e;
     --text-pure: #ffffff;
 }
 
 html {
-    background-color: var(--forest-deep);
-    background: radial-gradient(ellipse at 50% -15%, var(--forest-sunbeam) 0%, var(--forest-canopy) 45%, var(--forest-deep) 100%);
+    background-color: var(--forest-light-bg);
+    background: radial-gradient(ellipse at 50% -10%, #ffffff 0%, var(--forest-light-bg) 45%, var(--forest-mist) 100%);
     min-height: 100vh;
-    color: var(--text-forest);
+    color: var(--text-pine);
 }
 
 body {
     margin: 0;
     min-height: 100vh;
     background: transparent;
-    color: var(--text-forest);
+    color: var(--text-pine);
 }
 
 header {
@@ -46,42 +47,41 @@ header {
 }
 
 .nav-bar {
-    background-color: var(--moss-glass);
+    background-color: var(--nav-glass);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     max-width: 1800px;
     width: 100%;
     min-height: 110px;
-    border: 1px solid var(--moss-border);
-    border-radius: 26px;
+    border: 1px solid var(--nav-border);
+    border-radius: 24px;
     display: flex;
     align-items: center;
     padding: 0 50px;
     gap: 70px;
-    box-shadow: var(--moss-shadow);
+    box-shadow: var(--nav-shadow);
 }
 
 .logo-img {
-    background: #ffffff;
-    border: 1px solid rgba(74, 222, 128, 0.3);
-    border-radius: 20px;
-    padding: 10px 22px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    padding: 4px 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), 0 0 20px rgba(34, 197, 94, 0.15);
-    transition: all 0.3s ease;
+    box-shadow: none;
+    transition: transform 0.25s ease;
 }
 
 .logo-img:hover {
     transform: scale(1.02);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4), 0 0 25px rgba(74, 222, 128, 0.3);
 }
 
 .logo-log {
     width: 250px;
     border: none;
-    border-radius: 6px;
+    border-radius: 0;
     display: block;
 }
 
@@ -99,31 +99,30 @@ header {
 
 .desc-nav-bar {
     text-decoration: none;
-    color: var(--text-forest);
-    background: rgba(22, 56, 38, 0.55);
-    padding: 12px 26px;
-    border: 1px solid var(--moss-border);
+    color: var(--pine-deep);
+    background: var(--pine-surface);
+    padding: 12px 24px;
+    border: 1px solid var(--pine-border);
     border-radius: 9999px;
     font-weight: 600;
     font-size: 15px;
     letter-spacing: 0.3px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 6px rgba(23, 77, 52, 0.05);
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-flex;
     align-items: center;
 }
 
 .desc-nav-bar:hover {
     color: var(--text-pure);
-    background: linear-gradient(135deg, #166534 0%, #15803d 50%, var(--leaf-forest) 100%);
-    border-color: var(--leaf-glow);
-    box-shadow: 0 0 28px rgba(74, 222, 128, 0.42), 0 8px 24px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, var(--pine-medium) 0%, var(--pine-leaf) 100%);
+    border-color: var(--pine-medium);
+    box-shadow: 0 8px 20px -4px var(--pine-glow), 0 2px 6px rgba(27, 94, 59, 0.15);
     cursor: pointer;
     transform: translateY(-2px);
 }
 
 .desc-nav-bar:active {
     transform: translateY(0);
-    background: #14532d;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background: #14482c;
 }
