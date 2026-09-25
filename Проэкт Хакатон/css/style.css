@@ -4,31 +4,28 @@
 }
 
 :root {
-    /* Нежная масляная палитра */
-    --color-butter-light: #fffdf8;
-    --color-butter-main: #faf4e4;
-    --color-butter-dark: #f2ebd4;
-    --color-butter-card: rgba(255, 253, 248, 0.94);
-    --color-butter-shadow: rgba(43, 24, 16, 0.06);
-
-    /* Глубокий природный зелёный */
-    --color-deep-green: #184532;
-    --color-deep-green-hover: #123827;
-    --color-deep-green-border: rgba(24, 69, 50, 0.2);
-
-    /* Глубокий шоколад */
-    --color-chocolate: #2b1810;
-    --color-chocolate-hover: #1a0f0a;
-    --color-chocolate-border: rgba(43, 24, 16, 0.1);
+    /* Чистая эстетичная эко-палитра (Nordic Bio-Design) */
+    --eco-bg: #f4f7f4;
+    --eco-card: rgba(255, 255, 255, 0.88);
+    --eco-border: rgba(27, 77, 54, 0.14);
+    --eco-border-subtle: rgba(27, 77, 54, 0.08);
+    --eco-shadow: 0 12px 36px -6px rgba(20, 48, 33, 0.07), 0 2px 8px rgba(20, 48, 33, 0.04);
+    
+    /* Природные растительные тона */
+    --green-pine: #1b4d36;
+    --green-forest: #2d6a4f;
+    --green-sage: #52796f;
+    --green-mist: #e8efe9;
     
     /* Тексты */
-    --text-primary: #2b1810;
-    --text-on-dark: #fffdf7;
+    --text-primary: #15271e;
+    --text-muted: #496355;
+    --text-light: #ffffff;
 }
 
 html {
-    background-color: var(--color-butter-main);
-    background: radial-gradient(circle at 50% 0%, var(--color-butter-light) 0%, var(--color-butter-main) 50%, var(--color-butter-dark) 100%);
+    background-color: var(--eco-bg);
+    background: radial-gradient(circle at 50% -10%, #ffffff 0%, var(--eco-bg) 50%, var(--green-mist) 100%);
     min-height: 100vh;
     color: var(--text-primary);
 }
@@ -43,72 +40,81 @@ body {
 header {
     display: flex;
     justify-content: center;
-    padding: 24px 20px;
+    padding: 28px 24px;
 }
 
 .nav-bar {
-    background-color: var(--color-butter-card);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background-color: var(--eco-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     max-width: 1800px;
     width: 100%;
     min-height: 110px;
-    border: 1px solid var(--color-chocolate-border);
-    border-top: 3px solid var(--color-deep-green);
-    border-radius: 20px;
+    border: 1px solid var(--eco-border);
+    border-radius: 24px;
     display: flex;
     align-items: center;
-    padding: 0 60px;
-    gap: 80px;
-    box-shadow: 0 12px 32px 0 var(--color-butter-shadow), 0 2px 8px rgba(24, 69, 50, 0.04);
+    padding: 0 50px;
+    gap: 70px;
+    box-shadow: var(--eco-shadow);
 }
 
 .logo-img {
     background: #ffffff;
-    border: 1px solid var(--color-chocolate-border);
-    border-radius: 16px;
-    padding: 8px 18px;
+    border: 1px solid var(--eco-border-subtle);
+    border-radius: 18px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 14px var(--color-butter-shadow);
+    box-shadow: 0 4px 16px rgba(27, 77, 54, 0.06);
+    transition: transform 0.25s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.02);
 }
 
 .logo-log {
-    width: 260px;
+    width: 250px;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     display: block;
 }
 
 .nav-bar-sect {
-    font-size: 18px;
+    font-size: 17px;
+    flex: 1;
 }
 
 .btn-nav-bar {
     display: flex;
-    gap: 20px;
+    gap: 18px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .desc-nav-bar {
     text-decoration: none;
-    color: var(--text-on-dark);
-    background-color: var(--color-deep-green);
-    padding: 12px 22px;
-    border: 1px solid #133827;
-    border-radius: 12px;
+    color: var(--green-pine);
+    background: rgba(27, 77, 54, 0.07);
+    padding: 12px 24px;
+    border: 1px solid rgba(27, 77, 54, 0.18);
+    border-radius: 9999px;
     font-weight: 600;
-    letter-spacing: 0.2px;
-    box-shadow: 0 3px 10px rgba(24, 69, 50, 0.16);
-    transition: all 0.25s ease-in-out;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 6px rgba(27, 77, 54, 0.04);
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
 }
 
 .desc-nav-bar:hover {
-    color: var(--text-on-dark);
-    background-color: var(--color-chocolate);
-    border-color: var(--color-chocolate-hover);
-    box-shadow: 0 6px 18px rgba(43, 24, 16, 0.25);
+    color: var(--text-light);
+    background: linear-gradient(135deg, var(--green-pine) 0%, var(--green-forest) 100%);
+    border-color: var(--green-pine);
+    box-shadow: 0 8px 22px -4px rgba(27, 77, 54, 0.32), 0 2px 6px rgba(27, 77, 54, 0.12);
     cursor: pointer;
     transform: translateY(-2px);
 }

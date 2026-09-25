@@ -11,20 +11,20 @@ export default {
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
-        butter: {
-          light: '#FFFDF8',
-          DEFAULT: '#FAF4E4',
-          dark: '#F2EBD4',
+        eco: {
+          bg: '#F4F7F4',
+          card: 'rgba(255, 255, 255, 0.88)',
+          mist: '#E8EFE9',
         },
-        deepgreen: {
-          light: '#235E45',
-          DEFAULT: '#184532',
+        pine: {
+          light: '#2D6A4F',
+          DEFAULT: '#1B4D36',
           dark: '#123827',
         },
-        chocolate: {
-          light: '#42281D',
-          DEFAULT: '#2B1810',
-          dark: '#1A0F0A',
+        sage: {
+          light: '#749C90',
+          DEFAULT: '#52796F',
+          dark: '#354F48',
         },
         profi: {
           green: '#009640',
