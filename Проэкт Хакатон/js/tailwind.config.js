@@ -11,14 +11,18 @@ export default {
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
-        forest: {
+        canopy: {
+          dark: '#10261B',
+          deep: '#163626',
+          mid: '#1D4632',
+        },
+        mist: {
           light: '#F2F7F4',
-          mist: '#E2ECE5',
-          deep: '#14281E',
+          soft: '#E2ECE5',
         },
         pine: {
-          deep: '#174D34',
-          medium: '#1B5E3B',
+          deep: '#143D28',
+          hover: '#1B5E3B',
           leaf: '#2E8B57',
         },
         profi: {

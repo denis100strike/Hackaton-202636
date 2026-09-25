@@ -4,57 +4,69 @@
 }
 
 :root {
-    /* Светлый эстетичный вайб леса (Sunlit Pine Forest & Morning Mist) */
-    --forest-light-bg: #f2f7f4;
-    --forest-mist: #e2ece5;
+    /* Гармония тёмного и светлого без крайностей (Forest Canopy & Sunlit Mist) */
     
-    /* Матовое лесное стекло */
-    --nav-glass: rgba(255, 255, 255, 0.85);
-    --nav-border: rgba(30, 94, 63, 0.12);
-    --nav-shadow: 0 12px 36px -6px rgba(20, 60, 40, 0.06), 0 2px 8px rgba(30, 94, 63, 0.04);
+    /* Тёмный лесной полог (не чёрный, а глубокий хвойный) */
+    --canopy-dark: #10261b;
+    --canopy-deep: #163626;
+    --canopy-mid: #1d4632;
     
-    /* Хвоя, сосны и сочная зелень */
-    --pine-deep: #174d34;
-    --pine-medium: #1b5e3b;
-    --pine-leaf: #2e8b57;
-    --pine-surface: rgba(30, 94, 63, 0.08);
-    --pine-border: rgba(30, 94, 63, 0.18);
-    --pine-glow: rgba(27, 94, 59, 0.3);
+    /* Светлый утренний туман (не ослепительно белый, а мягкий природный) */
+    --mist-light: #f2f7f4;
+    --mist-soft: #e2ece5;
+    
+    /* Светлое матовое стекло навигации */
+    --nav-surface: rgba(255, 255, 255, 0.92);
+    --nav-border: rgba(255, 255, 255, 0.65);
+    --nav-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.35), 0 4px 15px rgba(16, 38, 27, 0.15);
+    
+    /* Тёмно-хвойные интерактивные кнопки */
+    --btn-pine: #143d28;
+    --btn-pine-hover: #1b5e3b;
+    --btn-leaf: #2e8b57;
+    --btn-border: #0f301f;
+    --btn-shadow: 0 4px 12px rgba(16, 38, 27, 0.25);
     
     /* Тексты */
-    --text-pine: #14281e;
-    --text-pure: #ffffff;
+    --text-on-light: #14281e;
+    --text-on-dark: #ffffff;
 }
 
 html {
-    background-color: var(--forest-light-bg);
-    background: radial-gradient(ellipse at 50% -10%, #ffffff 0%, var(--forest-light-bg) 45%, var(--forest-mist) 100%);
+    background-color: var(--canopy-dark);
+    background: linear-gradient(180deg, 
+        var(--canopy-dark) 0%, 
+        var(--canopy-deep) 180px, 
+        var(--canopy-mid) 280px, 
+        var(--mist-soft) 460px, 
+        var(--mist-light) 700px
+    );
     min-height: 100vh;
-    color: var(--text-pine);
+    color: var(--text-on-light);
 }
 
 body {
     margin: 0;
     min-height: 100vh;
     background: transparent;
-    color: var(--text-pine);
+    color: var(--text-on-light);
 }
 
 header {
     display: flex;
     justify-content: center;
-    padding: 28px 24px;
+    padding: 32px 24px 24px 24px;
 }
 
 .nav-bar {
-    background-color: var(--nav-glass);
+    background-color: var(--nav-surface);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     max-width: 1800px;
     width: 100%;
     min-height: 110px;
     border: 1px solid var(--nav-border);
-    border-radius: 24px;
+    border-radius: 26px;
     display: flex;
     align-items: center;
     padding: 0 50px;
@@ -99,30 +111,30 @@ header {
 
 .desc-nav-bar {
     text-decoration: none;
-    color: var(--pine-deep);
-    background: var(--pine-surface);
+    color: var(--text-on-dark);
+    background-color: var(--btn-pine);
     padding: 12px 24px;
-    border: 1px solid var(--pine-border);
+    border: 1px solid var(--btn-border);
     border-radius: 9999px;
     font-weight: 600;
     font-size: 15px;
     letter-spacing: 0.3px;
-    box-shadow: 0 2px 6px rgba(23, 77, 52, 0.05);
+    box-shadow: var(--btn-shadow);
     transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-flex;
     align-items: center;
 }
 
 .desc-nav-bar:hover {
-    color: var(--text-pure);
-    background: linear-gradient(135deg, var(--pine-medium) 0%, var(--pine-leaf) 100%);
-    border-color: var(--pine-medium);
-    box-shadow: 0 8px 20px -4px var(--pine-glow), 0 2px 6px rgba(27, 94, 59, 0.15);
+    color: var(--text-on-dark);
+    background: linear-gradient(135deg, var(--btn-pine-hover) 0%, var(--btn-leaf) 100%);
+    border-color: var(--btn-pine-hover);
+    box-shadow: 0 8px 22px -4px rgba(46, 139, 87, 0.45);
     cursor: pointer;
     transform: translateY(-2px);
 }
 
 .desc-nav-bar:active {
     transform: translateY(0);
-    background: #14482c;
+    background: #0f301f;
 }
