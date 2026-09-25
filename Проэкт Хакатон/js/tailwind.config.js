@@ -15,6 +15,13 @@ export default {
           green: '#009640',
           yellow: '#FFDE00',
           dark: '#0B1315',
+        },
+        deeptech: {
+          dark: '#060D0A',
+          surface: '#0B1712',
+          emerald: '#10B981',
+          mint: '#34D399',
+          glow: '#00E599',
         }
       }
     },
