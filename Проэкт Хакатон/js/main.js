@@ -314,26 +314,32 @@ function setupCardRadar(card, data) {
             `<b>Общая масса:</b> ${data.old.totalMassG} г → ${data.eco.totalMassG} г • <b>Цена:</b> +${data.eco.costDeltaPct}% • <i>Наведите на кнопки выше для деталей</i>`;
     }
 
-    btnEco.addEventListener('mouseenter', () => {
+    function showEcoOnly() {
         polyEco.style.opacity = '1';
         polyOld.style.opacity = '0.08';
         titleEl.textContent = `🟢 ${data.eco.name}`;
         textEl.innerHTML =
             `<b>Расчёт пластика:</b> Общий пластик ${data.eco.plasticMassG} г − Вторсырьё ${m.ecoRecycledG} г = <b>${m.ecoVirginG} г Virgin Plastic (-${m.virginReductionPct}%)</b><br>` +
             `<b>Характеристики:</b> ${data.eco.specNote}`;
-    });
+    }
 
-    btnOld.addEventListener('mouseenter', () => {
+    function showOldOnly() {
         polyEco.style.opacity = '0.08';
         polyOld.style.opacity = '1';
         titleEl.textContent = `🔴 ${data.old.name}`;
         textEl.innerHTML =
             `<b>Расчёт пластика:</b> Общий пластик ${data.old.plasticMassG} г − Вторсырьё 0 г = <b>${m.oldVirginG} г Virgin Plastic (100% первичный)</b><br>` +
             `<b>Проблема базы:</b> ${data.old.specNote}`;
-    });
+    }
 
+    btnEco.addEventListener('mouseenter', showEcoOnly);
+    btnOld.addEventListener('mouseenter', showOldOnly);
     btnEco.addEventListener('mouseleave', showBothMap);
     btnOld.addEventListener('mouseleave', showBothMap);
+
+    // Поддержка нажатий на экранах телефонов и планшетов
+    btnEco.addEventListener('click', showEcoOnly);
+    btnOld.addEventListener('click', showOldOnly);
 
     showBothMap();
 }
