@@ -6,6 +6,7 @@
 html {
     background: #035b03d4;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 header {
@@ -23,8 +24,59 @@ header {
     border-radius: 15px;
     display: flex;
     align-items: center;
-    padding: 0 80px;
-    gap: 100px;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 70px;
+
+}
+
+.blk-lang {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background: transparent;
+    border: none;
+}
+
+.lang-select {
+    background: transparent;
+    font-size: 25px;
+    border: none;
+    color: #1b2b06;
+    appearance: base-select;
+    outline: none;
+}
+
+.lang-select:hover {
+    color: #032b0670;
+    cursor: pointer;
+}
+
+.lang-select::picker(select) {
+    background: #538953;
+    cursor: pointer;
+    border: none;
+    appearance: base-select;
+    border-radius: 10px;
+}
+
+.lang-select::picker-icon {
+    display: none;
+}
+
+.lang {
+    background: #538953;
+    border: none;
+}
+
+.lang::checkmark {
+    display: none;
+}
+
+.lang:hover {
+    color: #032b0670;
+    cursor: pointer;
 }
 
 .logo-img {
@@ -39,7 +91,7 @@ header {
 }
 
 .nav-bar-sect {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .btn-nav-bar {
@@ -49,8 +101,7 @@ header {
 
 .desc-nav-bar {
     text-decoration: none;
-    color: #28782e;
-    background: #ffffff;
+    color: #032b06;
     padding: 5px;
     border: none;
     border-radius: 10px;
@@ -60,8 +111,7 @@ header {
 
 .log-in {
     text-decoration: none;
-    color: #28782e;
-    background: #ffffff;
+    color: #032b06;
     padding: 5px;
     border: none;
     border-radius: 10px;
@@ -70,7 +120,67 @@ header {
 }
 
 .desc-nav-bar:hover {
-    color: #07330ad0;
-    background: #ffffff85;
+    color: #032b0670;
     cursor: pointer;
+}
+
+.log-in:hover {
+    color: #032b0670;
+    cursor: pointer;
+}
+
+.img-product {
+    width: 315px;
+    border: none;
+    border-radius: 15px;
+}
+
+.option-class {
+    display: flex;
+    justify-content: center;
+}
+
+.name-option-class {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    width: 50%;
+    border-bottom: 2px solid #032b06;
+    padding-bottom: 15px;
+    font-size: 45px;
+}
+
+.all-products-board {
+    background: #538953b3;
+    border: none;
+    border: 15px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.section-product-board {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.products-board {
+    display: flex;
+    gap: 40px;
+    background: #285528b3;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.desc-product {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.info-product {
+    font-size: 15px;
 }
