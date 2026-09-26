@@ -1,32 +1,42 @@
 * {
     box-sizing: border-box;
-    font-family: monospace;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 html {
-    background: #035b03d4;
     padding: 20px;
     box-sizing: border-box;
+}
+
+html:root {
+    background: #faf4e4;
+    --forest-border: rgba(52, 211, 153, 0.28);
+    --forest-shadow: 0 20px 45px -8px rgba(18, 53, 36, 0.28);
 }
 
 header {
     display: flex;
     justify-content: center;
     box-sizing: border-box;
+    position: sticky;
+    top: 16px;
+    z-index: 100;
 }
 
 .nav-bar {
-    background-color: #538953b3;
+    background: rgba(29, 78, 54, 0.699);
+    backdrop-filter: blur(20px);
     max-width: 1800px;
     width: 100%;
     min-height: 120px;
-    border: none;
+    border: 1px solid var(--forest-border);
     border-radius: 15px;
+    box-shadow: var(--forest-shadow);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 10px 70px;
+    padding: 10px 50px;
 
 }
 
@@ -40,16 +50,18 @@ header {
 }
 
 .lang-select {
-    background: transparent;
-    font-size: 25px;
+    background: #faf4e4;
+    font-size: 18px;
     border: none;
-    color: #1b2b06;
+    padding: 4px 14px;
+    color: #123524;
     appearance: base-select;
     outline: none;
+    border-radius: 9999px;
 }
 
 .lang-select:hover {
-    color: #032b0670;
+    color: #cff0a4c5;
     cursor: pointer;
 }
 
@@ -101,31 +113,35 @@ header {
 
 .desc-nav-bar {
     text-decoration: none;
-    color: #032b06;
-    padding: 5px;
+    color: #123524;
+    background: #faf4e4;
+    padding: 8px 18px;
     border: none;
-    border-radius: 10px;
+    border-radius: 9999px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.25s;
     display: flex;
     align-items: center;
 }
 
 .log-in {
     text-decoration: none;
-    color: #032b06;
-    padding: 5px;
+    color: #ffffff;
+    background: #22c55e;
+    padding: 8px 20px;
     border: none;
-    border-radius: 10px;
+    border-radius: 9999px;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+    transition: 0.25s;
     display: flex;
     align-items: center;
 }
 
-.desc-nav-bar:hover {
-    color: #032b0670;
-    cursor: pointer;
-}
-
+.desc-nav-bar:hover,
 .log-in:hover {
-    color: #032b0670;
+    background: #22c55e;
+    color: #ffffff;
+    transform: translateY(-2px);
     cursor: pointer;
 }
 
@@ -143,21 +159,22 @@ header {
 .name-option-class {
     display: flex;
     justify-content: center;
-    padding-top: 100px;
+    padding-top: 50px;
     width: 60%;
-    border-bottom: 2px solid #032b06;
+    color: #123524;
+    border-bottom: 2px solid #123524;
     padding-bottom: 15px;
-    font-size: 45px;
+    font-size: 40px;
+    scroll-margin-top: 180px;
 }
 
 .all-products-board {
-    background: #538953b3;
+    background: transparent;
     border: none;
-    border: 15px;
-    padding: 20px;
-    border: none;
+    max-width: 1800px;
+    padding: 20px 0;
     border-radius: 10px;
-    margin: 30px 0;
+    margin: 30px auto;
 }
 
 .section-product-board {
@@ -169,10 +186,19 @@ header {
 .products-board {
     display: flex;
     gap: 40px;
-    background: #285528b3;
-    border: none;
-    border-radius: 15px;
-    padding: 20px;
+    background: #ffffff;
+    color: #123524;
+    border: 1px solid rgba(18, 53, 36, 0.12);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 8px 24px rgba(18, 53, 36, 0.08);
+    transition: 0.25s;
+}
+
+.products-board:hover {
+    transform: translateY(-4px);
+    border-color: #22c55e;
+    box-shadow: 0 16px 36px rgba(18, 53, 36, 0.14);
 }
 
 .desc-product {
@@ -183,4 +209,14 @@ header {
 
 .info-product {
     font-size: 15px;
+}
+
+.all-circule {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.circule-list {
+    padding: 10px;
 }
